@@ -1,0 +1,11 @@
+\section{Evaluation}
+
+We evaluate four axes.
+
+\paragraph{Latency.} \texttt{evaluation/benchmark\_latency.py} measures ML, embedding, retrieval, and full \texttt{invoke()} wall time. The design target is p95 end-to-end under 5\,s with a local 3B model; ONNX classification should remain under 100\,ms CPU.
+
+\paragraph{Detection quality.} \texttt{evaluation/benchmark\_accuracy.py} reports weighted F1, precision, recall, confusion structure, and benign-vs-attack ROC-AUC on a 20\% holdout (synthetic bootstrap or CIC-IDS2017 Friday when present). In-distribution synthetic clusters are expected to exceed 0.94 weighted F1; CIC results must be reported separately after training on the official CSVs.
+
+\paragraph{Ablation.} \texttt{evaluation/ablation\_study.py} compares ML-only, ML+RAG, ML+LLM, and the full graph to quantify added latency versus decision completeness (presence of TTP IDs, approval flags, NIST sections).
+
+\paragraph{Guardrails.} \texttt{evaluation/redteam\_injection.py} scores whether known instruction-override and destructive-tool strings are \emph{blocked}. Success is defined as injection success rate $\le 5\%$ on the held-out block list, plus rejection of non-allow-listed actions. The suite does not search for novel jailbreaks and must not be used as an attack cookbook.

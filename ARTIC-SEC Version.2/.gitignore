@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+*.pem
+
+# Node
+node_modules/
+.next/
+out/
+.turbo
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Data (large datasets; keep README + samples)
+data/**/*.csv
+data/**/*.zip
+data/**/*.parquet
+data/cic-ids2017/*.csv
+!data/**/.gitkeep
+!data/mitre-attack/*.json
+!data/synthetic/.gitkeep
+
+# Models
+backend/app/ml/models/*.pkl
+backend/app/ml/models/*.onnx
+backend/app/ml/models/*.joblib
+!backend/app/ml/models/.gitkeep
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker
+postgres_data/
+neo4j_data/
+qdrant_data/
+redis_data/

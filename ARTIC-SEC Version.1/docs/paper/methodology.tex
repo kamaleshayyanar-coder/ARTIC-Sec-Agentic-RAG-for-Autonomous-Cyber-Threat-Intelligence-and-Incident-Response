@@ -1,0 +1,13 @@
+\section{Methodology}
+
+\subsection{Ingest and detection}
+Events arrive from Kafka (\texttt{security-alerts}) or a database poller used when brokers are absent. Each record is normalized to \texttt{type}, \texttt{src\_ip}, \texttt{dst\_ip}, flow features, and timestamps. An Isolation Forest scores novelty; an XGBoost multiclass model trained on CIC-style labels (PortScan, DDoS, SQLi, \ldots) emits \texttt{ml\_prediction} and calibrated confidence. Models export to ONNX for CPU serving.
+
+\subsection{Retrieval}
+Technique descriptions are embedded (MiniLM, 384-d) into Qdrant. Reciprocal rank fusion combines ANN hits with BM25 over the same corpus. Neo4j stores \texttt{Technique}, \texttt{Tactic}, \texttt{Attacker}, \texttt{Asset} with \texttt{USES}, \texttt{TARGETS}, \texttt{PART\_OF}, \texttt{SUBTECHNIQUE\_OF}. Untrusted sources and documents matching injection patterns are refused at index time.
+
+\subsection{Agent graph}
+LangGraph state carries \texttt{alert}, \texttt{classification}, \texttt{evidence}, \texttt{analysis}, \texttt{decision}, \texttt{guardrail}, \texttt{execution}, \texttt{report}. The analysis node calls Llama~3.2 with JSON schema and sanitizes untrusted strings. The response node maps risk to MONITOR, BLOCK\_IP, ISOLATE\_HOST, or ESCALATE. Guardrails reject unknown actions, private-IP blocks without approval, and rate-limited agents. Reports follow NIST SP~800-61 section headings and extract IOCs.
+
+\subsection{Interface}
+The console streams alerts over WebSockets, KPIs over REST (Redis-cached), graphs for force-directed visualization, and SSE tokens for analyst Q\&A with citations.

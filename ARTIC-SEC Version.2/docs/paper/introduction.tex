@@ -1,0 +1,11 @@
+\section{Introduction}
+
+Security operations centers ingest high-volume, heterogeneous telemetry while facing analyst shortage and alert fatigue. Supervised detectors trained on public IDS corpora such as CIC-IDS2017 attain strong in-distribution F1 but fail to explain \emph{why} an event matters in ATT\&CK terms or what containment is proportionate. Large language models can draft narratives, yet unconstrained tool use is unsafe: prompt injection, RAG poisoning, and runaway playbooks are first-class risks in agentic SOC designs.
+
+ARTIC-Sec addresses this gap with three coupled layers: (i)~tabular ML for detection and anomaly scoring, (ii)~hybrid RAG (dense + BM25 + knowledge graph) grounded in MITRE ATT\&CK, and (iii)~a typed LangGraph that classifies, investigates, analyzes, decides, guardrails, and reports. Contributions:
+
+\begin{itemize}
+  \item An industrial reference architecture with FastAPI, PostgreSQL, Neo4j, Qdrant, Redis, and a Next.js analyst console.
+  \item A guardrailed agent graph whose execute node is advisory unless explicitly armed.
+  \item Evaluation harnesses for latency, accuracy, ablation, and injection blocking---not offensive tooling.
+\end{itemize}

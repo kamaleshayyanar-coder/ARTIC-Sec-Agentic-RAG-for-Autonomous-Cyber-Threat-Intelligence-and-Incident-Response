@@ -1,0 +1,8 @@
+[
+  {"source": "T1110.001", "target": "T1110", "relationship_type": "SUBTECHNIQUE_OF"},
+  {"source": "T1059.001", "target": "T1059", "relationship_type": "SUBTECHNIQUE_OF"},
+  {"source": "T1046", "target": "T1595", "relationship_type": "RELATED_TO"},
+  {"source": "T1190", "target": "T1059", "relationship_type": "RELATED_TO"},
+  {"source": "T1110", "target": "T1078", "relationship_type": "RELATED_TO"},
+  {"source": "T1078", "target": "T1021", "relationship_type": "RELATED_TO"}
+]

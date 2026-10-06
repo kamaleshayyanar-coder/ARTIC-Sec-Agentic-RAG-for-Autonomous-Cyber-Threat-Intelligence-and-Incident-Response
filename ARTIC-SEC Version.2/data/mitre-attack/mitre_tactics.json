@@ -1,0 +1,9 @@
+[
+  {"id": "TA0043", "name": "Reconnaissance", "description": "The adversary is trying to gather information they can use to plan future operations."},
+  {"id": "TA0007", "name": "Discovery", "description": "The adversary is trying to figure out your environment."},
+  {"id": "TA0001", "name": "Initial Access", "description": "The adversary is trying to get into your network."},
+  {"id": "TA0006", "name": "Credential Access", "description": "The adversary is trying to steal account names and passwords."},
+  {"id": "TA0008", "name": "Lateral Movement", "description": "The adversary is trying to move through your environment."},
+  {"id": "TA0011", "name": "Command and Control", "description": "The adversary is trying to communicate with compromised systems."},
+  {"id": "TA0040", "name": "Impact", "description": "The adversary is trying to manipulate, interrupt, or destroy systems and data."}
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "T1046",
+    "name": "Network Service Discovery",
+    "tactic": "discovery",
+    "description": "Adversaries may attempt to get a listing of services running on remote hosts, including those that may be vulnerable to remote software exploitation. Methods include port scans and vulnerability scans."
+  },
+  {
+    "id": "T1595",
+    "name": "Active Scanning",
+    "tactic": "reconnaissance",
+    "description": "Adversaries may execute active reconnaissance scans to gather information that can be used during targeting."
+  },
+  {
+    "id": "T1190",
+    "name": "Exploit Public-Facing Application",
+    "tactic": "initial-access",
+    "description": "Adversaries may attempt to exploit a weakness in an Internet-facing computer or program including SQL injection and other web application flaws."
+  },
+  {
+    "id": "T1110",
+    "name": "Brute Force",
+    "tactic": "credential-access",
+    "description": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained."
+  },
+  {
+    "id": "T1110.001",
+    "name": "Password Guessing",
+    "tactic": "credential-access",
+    "description": "Adversaries with no prior knowledge of legitimate credentials may guess passwords to attempt access to accounts."
+  },
+  {
+    "id": "T1498",
+    "name": "Network Denial of Service",
+    "tactic": "impact",
+    "description": "Adversaries may perform Network Denial of Service attacks to degrade or block availability of targeted resources to users."
+  },
+  {
+    "id": "T1499",
+    "name": "Endpoint Denial of Service",
+    "tactic": "impact",
+    "description": "Adversaries may perform Endpoint Denial of Service attacks to deny availability of services to users."
+  },
+  {
+    "id": "T1021",
+    "name": "Remote Services",
+    "tactic": "lateral-movement",
+    "description": "Adversaries may use valid accounts to log into a service specifically designed to accept remote connections."
+  },
+  {
+    "id": "T1071",
+    "name": "Application Layer Protocol",
+    "tactic": "command-and-control",
+    "description": "Adversaries may communicate using OSI application layer protocols to avoid detection and blend with existing traffic."
+  },
+  {
+    "id": "T1059",
+    "name": "Command and Scripting Interpreter",
+    "tactic": "execution",
+    "description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries."
+  },
+  {
+    "id": "T1059.001",
+    "name": "PowerShell",
+    "tactic": "execution",
+    "description": "Adversaries may abuse PowerShell to perform a number of actions, including discovery and execution."
+  },
+  {
+    "id": "T1078",
+    "name": "Valid Accounts",
+    "tactic": "defense-evasion",
+    "description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion."
+  }
+]
